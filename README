@@ -1,4 +1,5 @@
 Interactive Brokers Trading Bot
 
 1. We get historical data of a desired stock
-2. Plot the day, 1h, 5m can
+2. Plot the day, 1h, 5m candles on the screen
+3. Find support and resistance
