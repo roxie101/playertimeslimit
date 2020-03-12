@@ -1,2 +1,2 @@
 import Ib from '@stoqey/ib';
-import 
+import { stock } from '@stoqey/ib/dist/contract/
