@@ -3,4 +3,7 @@ import { stock } from '@stoqey/ib/dist/contract/stock';
 import WebSocket from 'ws';
 
 const wss = new WebSocket.Server({ port: 8080 });
-let con
+let connected = false;
+
+const options = { port: 4001 };
+c
