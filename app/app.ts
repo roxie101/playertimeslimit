@@ -6,4 +6,6 @@ const wss = new WebSocket.Server({ port: 8080 });
 let connected = false;
 
 const options = { port: 4001 };
-c
+const connection = new Ib(options);
+
+cons
