@@ -21,4 +21,7 @@ connection.on('disconnected', () => {
 });
 
 connection.on('result', (event: any, args: any) => {
-    console.log('%s --- %s', event, JSON.st
+    console.log('%s --- %s', event, JSON.stringify(args));
+});
+
+connection.on('error', (err: any) 
