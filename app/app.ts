@@ -13,4 +13,7 @@ const contract = stock('AAPL', undefined, 'USD');
 connection.on('connected', () => {
     connected = true;
     console.log('Connected!');
-}
+});
+
+connection.on('disconnected', () => {
+    
