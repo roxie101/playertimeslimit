@@ -8,4 +8,7 @@ let connected = false;
 const options = { port: 4001 };
 const connection = new Ib(options);
 
-const contract = stock('AAPL', undefined, 
+const contract = stock('AAPL', undefined, 'USD');
+
+connection.on('connected', () => {
+    connect
