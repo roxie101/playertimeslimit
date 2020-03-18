@@ -20,4 +20,4 @@ connection.on('disconnected', () => {
     console.log('Disconnected!');
 });
 
-c
+connection.on('result', (event: any, ar
