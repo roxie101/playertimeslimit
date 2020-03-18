@@ -27,3 +27,6 @@ connection.on('result', (event: any, args: any) => {
 connection.on('error', (err: any) => {
     console.error('error --- %s', err.message);
 });
+
+if (!connected) {
+    connection.connect(
