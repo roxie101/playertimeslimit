@@ -24,4 +24,6 @@ connection.on('result', (event: any, args: any) => {
     console.log('%s --- %s', event, JSON.stringify(args));
 });
 
-connection.on('error', (err: any) 
+connection.on('error', (err: any) => {
+    console.error('error --- %s', err.message);
+});
