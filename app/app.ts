@@ -16,4 +16,8 @@ connection.on('connected', () => {
 });
 
 connection.on('disconnected', () => {
-    
+    connected = false;
+    console.log('Disconnected!');
+});
+
+c
