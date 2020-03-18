@@ -11,4 +11,6 @@ const connection = new Ib(options);
 const contract = stock('AAPL', undefined, 'USD');
 
 connection.on('connected', () => {
-    connect
+    connected = true;
+    console.log('Connected!');
+}
