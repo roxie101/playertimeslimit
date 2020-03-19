@@ -29,4 +29,8 @@ connection.on('error', (err: any) => {
 });
 
 if (!connected) {
-    connection.connect(
+    connection.connect();
+}
+
+wss.on('connection', (ws) => {
+    ws.on
