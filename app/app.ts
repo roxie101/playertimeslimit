@@ -34,4 +34,5 @@ if (!connected) {
 
 wss.on('connection', (ws) => {
     ws.on('message', (message: string) => {
-        console.
+        console.log(`Received message => ${message}`);
+    
