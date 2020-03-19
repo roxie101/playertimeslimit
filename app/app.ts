@@ -33,4 +33,5 @@ if (!connected) {
 }
 
 wss.on('connection', (ws) => {
-    ws.on
+    ws.on('message', (message: string) => {
+        console.
