@@ -35,4 +35,6 @@ if (!connected) {
 wss.on('connection', (ws) => {
     ws.on('message', (message: string) => {
         console.log(`Received message => ${message}`);
-    
+    });
+
+    connection.reqHistoricalData(6000, 
