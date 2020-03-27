@@ -37,4 +37,5 @@ wss.on('connection', (ws) => {
         console.log(`Received message => ${message}`);
     });
 
-    connection.reqHistoricalData(6000, contract, '', '3 M', '1 day', 'ADJUSTED_LAST', 1, 
+    connection.reqHistoricalData(6000, contract, '', '3 M', '1 day', 'ADJUSTED_LAST', 1, 1, false);
+    connection.reqHistoric
