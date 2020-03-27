@@ -38,4 +38,5 @@ wss.on('connection', (ws) => {
     });
 
     connection.reqHistoricalData(6000, contract, '', '3 M', '1 day', 'ADJUSTED_LAST', 1, 1, false);
-    connection.reqHistoricalData(6001, contract, '', '1 W', '1 h
+    connection.reqHistoricalData(6001, contract, '', '1 W', '1 hour', 'ADJUSTED_LAST', 1, 1, false);
+    connect
