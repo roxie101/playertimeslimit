@@ -42,4 +42,4 @@ wss.on('connection', (ws) => {
     connection.reqHistoricalData(6002, contract, '', '3600 S', '1 min', 'ADJUSTED_LAST', 1, 1, false);
     connection.reqRealTimeBars(6003, contract, 5, 'TRADES', true);
 
-    connection.on('historicalData', (reqId: number, date: string, open: number, high: number, low: number, close: num
+    connection.on('historicalData', (reqId: number, date: string, open: number, high: number, low: number, close: number, volume: number, count: number, WAP: number, h
