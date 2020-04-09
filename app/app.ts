@@ -44,4 +44,6 @@ wss.on('connection', (ws) => {
 
     connection.on('historicalData', (reqId: number, date: string, open: number, high: number, low: number, close: number, volume: number, count: number, WAP: number, hasGaps: boolean) => {
         ws.send(
-            JS
+            JSON.stringify({
+                reqId: reqId,
+     
