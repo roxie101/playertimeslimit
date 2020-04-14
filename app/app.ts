@@ -46,4 +46,4 @@ wss.on('connection', (ws) => {
         ws.send(
             JSON.stringify({
                 reqId: reqId,
-                t: Date.parse(`${date.substring(0,4)}
+                t: Date.parse(`${date.substring(0,4)}-${date.substring(4,6)}-${date.substring(6,8)} $
