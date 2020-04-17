@@ -48,4 +48,5 @@ wss.on('connection', (ws) => {
                 reqId: reqId,
                 t: Date.parse(`${date.substring(0,4)}-${date.substring(4,6)}-${date.substring(6,8)} ${date.substr(10)}`),
                 o: open.toString(),
-                h: hi
+                h: high.toString(),
+                l: low.
