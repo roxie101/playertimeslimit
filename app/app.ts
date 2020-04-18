@@ -61,4 +61,6 @@ wss.on('connection', (ws) => {
                 reqId: reqId,
                 t: time,
                 o: open.toString(),
-                h: high.to
+                h: high.toString(),
+                l: low.toString(),
+     
