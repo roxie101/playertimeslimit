@@ -60,4 +60,5 @@ wss.on('connection', (ws) => {
             JSON.stringify({
                 reqId: reqId,
                 t: time,
-            
+                o: open.toString(),
+                h: high.to
