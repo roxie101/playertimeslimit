@@ -51,4 +51,8 @@ wss.on('connection', (ws) => {
                 h: high.toString(),
                 l: low.toString(),
                 c: close.toString(),
-       
+            })
+        );
+    });
+
+    connection.on('realtimeBar', 
