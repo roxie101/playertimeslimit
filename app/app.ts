@@ -55,4 +55,4 @@ wss.on('connection', (ws) => {
         );
     });
 
-    connection.on('realtimeBar', (reqId: number, time: number, open: number
+    connection.on('realtimeBar', (reqId: number, time: number, open: number, high: number, low: number, close: number, vol
