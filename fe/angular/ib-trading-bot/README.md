@@ -1,3 +1,3 @@
 # IbTradingBot
 
-This project wa
+This project was generated with [Angular CLI](https://github.co
