@@ -65,3 +65,7 @@ wss.on('connection', (ws) => {
                 l: low.toString(),
                 c: close.toString(),
             })
+        );
+    });
+
+});

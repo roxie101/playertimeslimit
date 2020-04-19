@@ -1,0 +1,3 @@
+# IbTradingBot
+
+This project wa
