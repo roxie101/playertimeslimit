@@ -63,4 +63,5 @@ wss.on('connection', (ws) => {
                 o: open.toString(),
                 h: high.toString(),
                 l: low.toString(),
-     
+                c: close.toString(),
+            })
