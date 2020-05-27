@@ -14,4 +14,6 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/ib-trading-bot",
-            "index": "s
+            "index": "src/index.html",
+            "main": "src/main.ts",
+    
