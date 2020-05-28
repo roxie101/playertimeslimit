@@ -16,4 +16,5 @@
             "outputPath": "dist/ib-trading-bot",
             "index": "src/index.html",
             "main": "src/main.ts",
-    
+            "polyfills": "src/polyfills.ts",
+ 
