@@ -29,4 +29,6 @@
           },
           "configurations": {
             "production": {
-              "fileRepl
+              "fileReplacements": [
+                {
+                  "re
