@@ -37,4 +37,6 @@
               ],
               "optimization": true,
               "outputHashing": "all",
-              "sourceMap
+              "sourceMap": false,
+              "extractCss": true,
+ 
