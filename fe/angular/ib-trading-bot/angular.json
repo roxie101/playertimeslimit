@@ -44,4 +44,6 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "b
+              "budgets": [
+                {
+  
