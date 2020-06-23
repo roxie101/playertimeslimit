@@ -55,4 +55,4 @@
           }
         },
         "serve": {
-       
+          "builder": "@angular-devkit/build-angular
