@@ -55,4 +55,6 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+   
