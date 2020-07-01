@@ -57,4 +57,6 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ib-trading-bot
+            "browserTarget": "ib-trading-bot:build"
+          },
+          "configurations"
