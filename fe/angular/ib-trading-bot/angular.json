@@ -59,4 +59,6 @@
           "options": {
             "browserTarget": "ib-trading-bot:build"
           },
-          "configurations"
+          "configurations": {
+            "production": {
+         
