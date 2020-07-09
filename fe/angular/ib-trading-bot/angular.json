@@ -64,4 +64,6 @@
               "browserTarget": "ib-trading-bot:build:production"
             }
           }
-   
+        },
+        "extract-i18n": {
+          "builder":
