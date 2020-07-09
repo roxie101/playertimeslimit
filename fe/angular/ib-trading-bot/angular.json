@@ -61,4 +61,7 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "ib-trading-bot:b
+              "browserTarget": "ib-trading-bot:build:production"
+            }
+          }
+   
