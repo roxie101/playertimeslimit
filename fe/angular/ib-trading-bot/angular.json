@@ -66,4 +66,4 @@
           }
         },
         "extract-i18n": {
-          "builder":
+          "builder": "@angular-devkit/build-angular:extract-i
