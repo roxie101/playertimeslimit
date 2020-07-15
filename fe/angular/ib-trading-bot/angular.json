@@ -68,4 +68,4 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "bro
+            "browserTarget": "ib-trading-bot:build"
