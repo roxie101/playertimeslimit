@@ -72,4 +72,4 @@
           }
         },
         "test": {
-         
+          "builder": "@angular-devkit/build-angular:kar
