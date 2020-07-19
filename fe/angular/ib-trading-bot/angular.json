@@ -72,4 +72,6 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:kar
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "m
