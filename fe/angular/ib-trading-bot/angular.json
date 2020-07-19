@@ -74,4 +74,5 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "m
+            "main": "src/test.ts",
+            "polyfills": "src/polyf
