@@ -76,4 +76,5 @@
           "options": {
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/ts
+            "tsConfig": "src/tsconfig.spec.json",
+            "karmaConfig":
