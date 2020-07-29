@@ -77,4 +77,5 @@
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig":
+            "karmaConfig": "src/karma.conf.js",
+            "
