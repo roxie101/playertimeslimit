@@ -86,4 +86,7 @@
               "src/favicon.ico",
               "src/assets"
             ]
-        
+          }
+        },
+        "lint": {
+          "builde
