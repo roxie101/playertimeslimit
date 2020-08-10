@@ -92,4 +92,5 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "
+              "src/tsconfig.app.json",
+              "src/ts
