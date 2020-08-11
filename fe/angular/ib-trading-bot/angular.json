@@ -93,4 +93,7 @@
           "options": {
             "tsConfig": [
               "src/tsconfig.app.json",
-              "src/ts
+              "src/tsconfig.spec.json"
+            ],
+            "exclude": [
+         
