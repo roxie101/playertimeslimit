@@ -99,4 +99,7 @@
               "**/node_modules/**"
             ]
           }
-  
+        }
+      }
+    },
+    "ib-trading-bot-e2
