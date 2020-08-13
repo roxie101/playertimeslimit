@@ -102,4 +102,6 @@
         }
       }
     },
-    "ib-trading-bot-e2
+    "ib-trading-bot-e2e": {
+      "root": "e2e/",
+      "projectType
