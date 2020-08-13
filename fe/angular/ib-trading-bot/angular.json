@@ -104,4 +104,6 @@
     },
     "ib-trading-bot-e2e": {
       "root": "e2e/",
-      "projectType
+      "projectType": "application",
+      "prefix": "",
+      "ar
