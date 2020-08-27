@@ -114,4 +114,5 @@
             "devServerTarget": "ib-trading-bot:serve"
           },
           "configurations": {
-         
+            "production": {
+              "devServerTarget"
