@@ -108,4 +108,4 @@
       "prefix": "",
       "architect": {
         "e2e": {
-          "builder": "@
+          "builder": "@angular-devkit/build-angular:protractor",
