@@ -112,4 +112,6 @@
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
             "devServerTarget": "ib-trading-bot:serve"
-    
+          },
+          "configurations": {
+         
