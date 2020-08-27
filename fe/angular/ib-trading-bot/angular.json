@@ -106,4 +106,6 @@
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
-      "ar
+      "architect": {
+        "e2e": {
+          "builder": "@
