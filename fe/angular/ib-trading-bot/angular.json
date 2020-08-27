@@ -117,4 +117,7 @@
             "production": {
               "devServerTarget": "ib-trading-bot:serve:production"
             }
-      
+          }
+        },
+        "lint": {
+     
