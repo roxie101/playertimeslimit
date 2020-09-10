@@ -120,4 +120,4 @@
           }
         },
         "lint": {
-     
+          "builder": "@angular-devkit/build-angu
