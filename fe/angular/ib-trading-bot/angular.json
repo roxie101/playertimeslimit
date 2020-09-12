@@ -120,4 +120,6 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angu
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "ts
