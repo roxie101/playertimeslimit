@@ -124,4 +124,7 @@
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
             "exclude": [
-              "**/node_modu
+              "**/node_modules/**"
+            ]
+          }
+    
