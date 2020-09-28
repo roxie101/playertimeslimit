@@ -3,4 +3,6 @@
 
 const { SpecReporter } = require('jasmine-spec-reporter');
 
-exports.
+exports.config = {
+  allScriptsTimeout: 11000,
+  specs:
