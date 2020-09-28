@@ -1,2 +1,2 @@
 // Protractor configuration file, see link for more information
-// htt
+// https://github.com/angular/protractor/blob
