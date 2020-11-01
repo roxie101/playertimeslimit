@@ -21,4 +21,4 @@ exports.config = {
   },
   onPrepare() {
     require('ts-node').register({
-      project
+      project: require('path').join(__dirname, './tsconfig.e2
