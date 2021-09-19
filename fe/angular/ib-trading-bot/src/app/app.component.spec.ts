@@ -1,2 +1,3 @@
 import { TestBed, async } from '@angular/core/testing';
-import { RouterTestingModul
+import { RouterTestingModule } from '@angular/router/testing';
+import { App
