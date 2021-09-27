@@ -14,4 +14,5 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
-  i
+  it('should create the app', () => {
+    con
