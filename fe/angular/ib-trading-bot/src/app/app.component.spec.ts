@@ -15,4 +15,4 @@ describe('AppComponent', () => {
   }));
 
   it('should create the app', () => {
-    con
+    const fixture = TestBed.createComponent(AppComponent)
