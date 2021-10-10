@@ -20,4 +20,5 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title '
+  it(`should have as title 'ib-trading-bot'`, () => {
+    const fixture
