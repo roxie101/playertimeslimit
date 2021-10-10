@@ -22,4 +22,5 @@ describe('AppComponent', () => {
 
   it(`should have as title 'ib-trading-bot'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app =
+    const app = fixture.debugElement.componentInstance;
+    expe
