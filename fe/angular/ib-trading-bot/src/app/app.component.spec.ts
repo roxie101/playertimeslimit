@@ -23,4 +23,5 @@ describe('AppComponent', () => {
   it(`should have as title 'ib-trading-bot'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expe
+    expect(app.title).toEqual('ib-trading-bot');
+  
