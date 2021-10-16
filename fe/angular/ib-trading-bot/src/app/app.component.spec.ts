@@ -26,4 +26,5 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('ib-trading-bot');
   });
 
-  it('should render title in a h1 tag', () => 
+  it('should render title in a h1 tag', () => {
+    const fixture = TestBed.createComponent(Ap
