@@ -6,4 +6,6 @@ import { AppComponent } from './app.component';
 import { MarketDataGraphsComponent } from './market-data-graphs/market-data-graphs.component';
 
 @NgModule({
-  dec
+  declarations: [
+    AppComponent,
+    Marke
