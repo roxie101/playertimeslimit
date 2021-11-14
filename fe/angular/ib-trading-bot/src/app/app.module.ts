@@ -8,4 +8,7 @@ import { MarketDataGraphsComponent } from './market-data-graphs/market-data-grap
 @NgModule({
   declarations: [
     AppComponent,
-    Marke
+    MarketDataGraphsComponent
+  ],
+  imports: [
+    Bro
