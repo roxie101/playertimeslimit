@@ -11,4 +11,7 @@ import { MarketDataGraphsComponent } from './market-data-graphs/market-data-grap
     MarketDataGraphsComponent
   ],
   imports: [
-    Bro
+    BrowserModule,
+    AppRoutingModule
+  ],
+  provi
