@@ -14,4 +14,7 @@ import { MarketDataGraphsComponent } from './market-data-graphs/market-data-grap
     BrowserModule,
     AppRoutingModule
   ],
-  provi
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export
