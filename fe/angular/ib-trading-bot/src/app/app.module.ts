@@ -17,4 +17,4 @@ import { MarketDataGraphsComponent } from './market-data-graphs/market-data-grap
   providers: [],
   bootstrap: [AppComponent]
 })
-export
+export class AppModule { }
