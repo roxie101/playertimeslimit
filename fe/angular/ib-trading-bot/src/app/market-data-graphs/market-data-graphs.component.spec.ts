@@ -1,3 +1,3 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Ma
+import { MarketDataGraphsComponent } from './market-dat
