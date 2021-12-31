@@ -8,4 +8,9 @@ describe('MarketDataGraphsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MarketDataGraphsComp
+      declarations: [ MarketDataGraphsComponent ]
+    })
+    .compileComponents();
+  }));
+
+  bef
