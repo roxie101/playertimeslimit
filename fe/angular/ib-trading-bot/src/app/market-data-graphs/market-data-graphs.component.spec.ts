@@ -7,4 +7,5 @@ describe('MarketDataGraphsComponent', () => {
   let fixture: ComponentFixture<MarketDataGraphsComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingMo
+    TestBed.configureTestingModule({
+      declarations: [ MarketDataGraphsComp
