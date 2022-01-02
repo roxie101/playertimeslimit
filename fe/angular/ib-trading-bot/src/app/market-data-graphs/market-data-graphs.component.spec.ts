@@ -13,4 +13,5 @@ describe('MarketDataGraphsComponent', () => {
     .compileComponents();
   }));
 
-  bef
+  beforeEach(() => {
+    fixture = TestBed.createCompo
