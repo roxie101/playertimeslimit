@@ -15,4 +15,5 @@ describe('MarketDataGraphsComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(MarketDataGraphsComponent);
-    compone
+    component = fixture.componentInstance;
+    fixtu
