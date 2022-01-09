@@ -16,4 +16,7 @@ describe('MarketDataGraphsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(MarketDataGraphsComponent);
     component = fixture.componentInstance;
-    fixtu
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
