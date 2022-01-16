@@ -6,3 +6,58 @@ declare const Chart;
 declare const luxon;
 
 export interface CandlestickData {
+    reqId: number;
+    t: number;
+    o: number;
+    h: number;
+    l: number;
+    c: number;
+}
+
+@Component({
+  selector: 'app-market-data-graphs',
+  templateUrl: './market-data-graphs.component.html',
+  styleUrls: ['./market-data-graphs.component.css']
+})
+export class MarketDataGraphsComponent implements OnInit {
+  webSocketConnection: WebSocket;
+  webSocketMessage$ = new Subject();
+  historicData: CandlestickData[];
+  messageArray: CandlestickData[] = [];
+
+  constructor() { }
+
+  ngOnInit() {
+    this.startWebSocketClient();
+
+    this.webSocketMessage$.subscribe((message: string) => {
+      const parsedMessage: CandlestickData = JSON.parse(message);
+      this.messageArray.push(parsedMessage);
+
+      // Check when data for a certain graph has finished, if so, render the graph
+      if (parsedMessage.t === null) {
+        if (parsedMessage.reqId === 6000) {
+          this.renderGraph(
+            this.messageArray
+              .filter(candlestick => candlestick.t > 0)
+              .filter(candlestick => candlestick.reqId === 6000), 'chart3M1D');
+        }
+
+        if (parsedMessage.reqId === 6001) {
+          this.renderGraph(
+            this.messageArray
+            .filter(candlestick => candlestick.t > 0)
+            .filter(candlestick => candlestick.reqId === 6001), 'chart1W1H');
+        }
+
+        if (parsedMessage.reqId === 6002) {
+          this.renderGraph(
+            this.messageArray
+              .filter(candlestick => candlestick.t > 0)
+              .filter(candlestick => candlestick.reqId === 6002), 'chart1H1m');
+        }
+      }
+
+      // Live 5 sec bar graph
+      if (parsedMessage.reqId === 6003) {
+        this.renderGraph(
