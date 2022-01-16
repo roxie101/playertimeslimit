@@ -61,3 +61,44 @@ export class MarketDataGraphsComponent implements OnInit {
       // Live 5 sec bar graph
       if (parsedMessage.reqId === 6003) {
         this.renderGraph(
+          this.messageArray
+            .filter(candlestick => candlestick.t > 0)
+            .filter(candlestick => candlestick.reqId === 6003), 'chart5s');
+      }
+
+    });
+  }
+
+  startWebSocketClient() {
+    const url = 'ws://localhost:8080/';
+    this.webSocketConnection = new WebSocket(url);
+
+    this.webSocketConnection.onopen = () => {
+      console.log(`WebSocket connected!`);
+    };
+
+    this.webSocketConnection.onerror = error => {
+      console.log(`WebSocket error: ${error}`);
+    };
+
+    this.webSocketConnection.onmessage = (messageEvent: MessageEvent) => {
+      const lastMessage = (messageEvent.data as string);
+      console.log(lastMessage);
+      this.webSocketMessage$.next(lastMessage);
+    };
+  }
+
+  renderGraph(data: CandlestickData[], element: string): void {
+    const barCount = 60;
+    const initialDateStr = '01 Apr 2017 00:00 Z';
+
+    const ctx = (document.getElementById(element) as any).getContext('2d');
+    ctx.canvas.width = 600;
+    ctx.canvas.height = 400;
+
+    const chart = new Chart(ctx, {
+      type: 'candlestick',
+      data: {
+        datasets: [{
+          label: element,
+          data: data
