@@ -102,3 +102,8 @@ export class MarketDataGraphsComponent implements OnInit {
         datasets: [{
           label: element,
           data: data
+        }]
+      }
+    });
+  }
+}
