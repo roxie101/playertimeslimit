@@ -84,3 +84,63 @@ Chart.defaults.financial = {
 					lastMajor = currMajor;
 				}
 				scale.ticks = ticks;
+			}
+		},
+		y: {
+			type: 'linear'
+		}
+	},
+
+	tooltips: {
+		intersect: false,
+		mode: 'index',
+		callbacks: {
+			label(tooltipItem, data) {
+				const dataset = data.datasets[tooltipItem.datasetIndex];
+				const point = dataset.data[tooltipItem.index];
+
+				if (!helpers.isNullOrUndef(point.y)) {
+					return Chart.defaults.tooltips.callbacks.label(tooltipItem, data);
+				}
+
+				const {o, h, l, c} = point;
+
+				return 'O: ' + o + '  H: ' + h + '  L: ' + l + '  C: ' + c;
+			}
+		}
+	}
+};
+
+/**
+ * This class is based off controller.bar.js from the upstream Chart.js library
+ */
+class FinancialController extends Chart.controllers.bar {
+
+	getLabelAndValue(index) {
+		const me = this;
+		const parsed = me.getParsed(index);
+
+		const {o, h, l, c} = parsed;
+		const value = 'O: ' + o + '  H: ' + h + '  L: ' + l + '  C: ' + c;
+
+		return {
+			label: '' + me._cachedMeta.iScale.getLabelForValue(parsed.t),
+			value
+		};
+	}
+
+	getAllParsedValues() {
+		const parsed = this._cachedMeta._parsed;
+		const values = [];
+		for (let i = 0; i < parsed.length; ++i) {
+			values.push(parsed[i].t);
+		}
+		return values;
+	}
+
+	/**
+	 * Implement this ourselves since it doesn't handle high and low values
+	 * https://github.com/chartjs/Chart.js/issues/7328
+	 * @protected
+	 */
+	getMinMax(scale) {
