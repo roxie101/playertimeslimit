@@ -144,3 +144,47 @@ class FinancialController extends Chart.controllers.bar {
 	 * @protected
 	 */
 	getMinMax(scale) {
+		const meta = this._cachedMeta;
+		const _parsed = meta._parsed;
+
+		if (_parsed.length < 2) {
+			return {min: 0, max: 1};
+		}
+
+		if (scale === meta.iScale) {
+			return {min: _parsed[0].t, max: _parsed[_parsed.length - 1].t};
+		}
+
+		let min = Number.POSITIVE_INFINITY;
+		let max = Number.NEGATIVE_INFINITY;
+		for (let i = 0; i < _parsed.length; i++) {
+			const data = _parsed[i];
+			min = Math.min(min, data.l);
+			max = Math.max(max, data.h);
+		}
+		return {min, max};
+	}
+
+	_getRuler() {
+		const me = this;
+		const meta = me._cachedMeta;
+		const iScale = meta.iScale;
+		const pixels = [];
+		for (let i = 0; i < meta.data.length; ++i) {
+			pixels.push(iScale.getPixelForValue(me.getParsed(i).t));
+		}
+		return {
+			pixels,
+			start: iScale._startPixel,
+			end: iScale._endPixel,
+			stackCount: me._getStackCount(),
+			scale: iScale
+		};
+	}
+
+	/**
+	 * @protected
+	 */
+	calculateElementProperties(index, ruler, reset, options) {
+		const me = this;
+		const vscale = me._getValueScale();
