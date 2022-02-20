@@ -265,3 +265,54 @@ function getBarBounds(bar, useFinalPosition) {
 function inRange(bar, x, y, useFinalPosition) {
 	const skipX = x === null;
 	const skipY = y === null;
+	const bounds = !bar || (skipX && skipY) ? false : getBarBounds(bar, useFinalPosition);
+
+	return bounds
+		&& (skipX || x >= bounds.left && x <= bounds.right)
+		&& (skipY || y >= bounds.top && y <= bounds.bottom);
+}
+
+class FinancialElement extends Chart.Element {
+
+	height() {
+		return this.base - this.y;
+	}
+
+	inRange(mouseX, mouseY, useFinalPosition) {
+		return inRange(this, mouseX, mouseY, useFinalPosition);
+	}
+
+	inXRange(mouseX, useFinalPosition) {
+		return inRange(this, mouseX, null, useFinalPosition);
+	}
+
+	inYRange(mouseY, useFinalPosition) {
+		return inRange(this, null, mouseY, useFinalPosition);
+	}
+
+	getRange(axis) {
+		return axis === 'x' ? this.width / 2 : this.height / 2;
+	}
+
+	getCenterPoint(useFinalPosition) {
+		const {x, low, high} = this.getProps(['x', 'low', 'high'], useFinalPosition);
+		return {
+			x,
+			y: (high + low) / 2
+		};
+	}
+
+	tooltipPosition(useFinalPosition) {
+		const {x, open, close} = this.getProps(['x', 'open', 'close'], useFinalPosition);
+		return {
+			x,
+			y: (open + close) / 2
+		};
+	}
+}
+
+const helpers$1 = Chart.helpers;
+const globalOpts$1 = Chart.defaults;
+
+globalOpts$1.elements.candlestick = helpers$1.merge({}, [globalOpts$1.elements.financial, {
+	borderColor: globalOpts$1.elements.financial.color.unchanged,
