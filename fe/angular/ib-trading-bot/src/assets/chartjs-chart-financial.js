@@ -188,3 +188,45 @@ class FinancialController extends Chart.controllers.bar {
 	calculateElementProperties(index, ruler, reset, options) {
 		const me = this;
 		const vscale = me._getValueScale();
+		const base = vscale.getBasePixel();
+		const ipixels = me._calculateBarIndexPixels(index, ruler, options);
+		const data = me.chart.data.datasets[me.index].data[index];
+		const open = vscale.getPixelForValue(data.o);
+		const high = vscale.getPixelForValue(data.h);
+		const low = vscale.getPixelForValue(data.l);
+		const close = vscale.getPixelForValue(data.c);
+
+		return {
+			base: reset ? base : low,
+			x: ipixels.center,
+			y: (low + high) / 2,
+			width: ipixels.size,
+			open,
+			high,
+			low,
+			close
+		};
+	}
+
+	draw() {
+		const me = this;
+		const chart = me.chart;
+		const rects = me._cachedMeta.data;
+		helpers.canvas.clipArea(chart.ctx, chart.chartArea);
+		for (let i = 0; i < rects.length; ++i) {
+			rects[i].draw(me._ctx);
+		}
+		helpers.canvas.unclipArea(chart.ctx);
+	}
+
+}
+
+FinancialController.prototype.dataElementType = Chart.elements.Financial;
+
+const globalOpts = Chart.defaults;
+
+globalOpts.elements.financial = {
+	color: {
+		up: 'rgba(80, 160, 115, 1)',
+		down: 'rgba(215, 85, 65, 1)',
+		unchanged: 'rgba(90, 90, 90, 1)',
