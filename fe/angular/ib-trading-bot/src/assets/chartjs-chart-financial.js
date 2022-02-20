@@ -316,3 +316,49 @@ const globalOpts$1 = Chart.defaults;
 
 globalOpts$1.elements.candlestick = helpers$1.merge({}, [globalOpts$1.elements.financial, {
 	borderColor: globalOpts$1.elements.financial.color.unchanged,
+	borderWidth: 1,
+}]);
+
+class CandlestickElement extends FinancialElement {
+	draw(ctx) {
+		const me = this;
+
+		const {x, open, high, low, close} = me;
+
+		let borderColors = me.borderColor;
+		if (typeof borderColors === 'string') {
+			borderColors = {
+				up: borderColors,
+				down: borderColors,
+				unchanged: borderColors
+			};
+		}
+
+		let borderColor;
+		if (close < open) {
+			borderColor = helpers$1.valueOrDefault(borderColors ? borderColors.up : undefined, globalOpts$1.elements.candlestick.borderColor);
+			ctx.fillStyle = helpers$1.valueOrDefault(me.color ? me.color.up : undefined, globalOpts$1.elements.candlestick.color.up);
+		} else if (close > open) {
+			borderColor = helpers$1.valueOrDefault(borderColors ? borderColors.down : undefined, globalOpts$1.elements.candlestick.borderColor);
+			ctx.fillStyle = helpers$1.valueOrDefault(me.color ? me.color.down : undefined, globalOpts$1.elements.candlestick.color.down);
+		} else {
+			borderColor = helpers$1.valueOrDefault(borderColors ? borderColors.unchanged : undefined, globalOpts$1.elements.candlestick.borderColor);
+			ctx.fillStyle = helpers$1.valueOrDefault(me.color ? me.color.unchanged : undefined, globalOpts$1.elements.candlestick.color.unchanged);
+		}
+
+		ctx.lineWidth = helpers$1.valueOrDefault(me.borderWidth, globalOpts$1.elements.candlestick.borderWidth);
+		ctx.strokeStyle = helpers$1.valueOrDefault(borderColor, globalOpts$1.elements.candlestick.borderColor);
+
+		ctx.beginPath();
+		ctx.moveTo(x, high);
+		ctx.lineTo(x, Math.min(open, close));
+		ctx.moveTo(x, low);
+		ctx.lineTo(x, Math.max(open, close));
+		ctx.stroke();
+		ctx.fillRect(x - me.width / 2, close, me.width, open - close);
+		ctx.strokeRect(x - me.width / 2, close, me.width, open - close);
+		ctx.closePath();
+	}
+}
+
+Chart.defaults.candlestick = Chart.helpers.merge({}, Chart.defaults.financial);
