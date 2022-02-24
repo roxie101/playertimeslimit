@@ -362,3 +362,56 @@ class CandlestickElement extends FinancialElement {
 }
 
 Chart.defaults.candlestick = Chart.helpers.merge({}, Chart.defaults.financial);
+
+class CandlestickController extends FinancialController {
+
+	updateElements(elements, start, mode) {
+		const me = this;
+		const dataset = me.getDataset();
+		const ruler = me._ruler || me._getRuler();
+
+		for (let i = 0; i < elements.length; i++) {
+			const index = start + i;
+			const options = me.resolveDataElementOptions(index, mode);
+
+			const baseProperties = me.calculateElementProperties(index, ruler, mode === 'reset', options);
+			const properties = {
+				...baseProperties,
+				datasetLabel: dataset.label || '',
+				// label: '', // to get label value please use dataset.data[index].label
+
+				// Appearance
+				color: dataset.color,
+				borderColor: dataset.borderColor,
+				borderWidth: dataset.borderWidth,
+			};
+			properties.options = options;
+
+			me.updateElement(elements[i], index, properties, mode);
+		}
+	}
+
+}
+
+CandlestickController.prototype.dataElementType = CandlestickElement;
+Chart.controllers.candlestick = CandlestickController;
+
+const helpers$2 = Chart.helpers;
+const globalOpts$2 = Chart.defaults;
+
+globalOpts$2.elements.ohlc = helpers$2.merge({}, [globalOpts$2.elements.financial, {
+	lineWidth: 2,
+	armLength: null,
+	armLengthRatio: 0.8,
+}]);
+
+class OhlcElement extends FinancialElement {
+	draw(ctx) {
+		const me = this;
+
+		const {x, open, high, low, close} = me;
+
+		const armLengthRatio = helpers$2.valueOrDefault(me.armLengthRatio, globalOpts$2.elements.ohlc.armLengthRatio);
+		let armLength = helpers$2.valueOrDefault(me.armLength, globalOpts$2.elements.ohlc.armLength);
+		if (armLength === null) {
+			// The width of an ohlc is affected by barPercentage and categoryPercentage
