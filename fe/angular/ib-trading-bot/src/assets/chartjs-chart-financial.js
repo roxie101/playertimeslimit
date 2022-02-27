@@ -415,3 +415,44 @@ class OhlcElement extends FinancialElement {
 		let armLength = helpers$2.valueOrDefault(me.armLength, globalOpts$2.elements.ohlc.armLength);
 		if (armLength === null) {
 			// The width of an ohlc is affected by barPercentage and categoryPercentage
+			// This behavior is caused by extending controller.financial, which extends controller.bar
+			// barPercentage and categoryPercentage are now set to 1.0 (see controller.ohlc)
+			// and armLengthRatio is multipled by 0.5,
+			// so that when armLengthRatio=1.0, the arms from neighbour ohcl touch,
+			// and when armLengthRatio=0.0, ohcl are just vertical lines.
+			armLength = me.width * armLengthRatio * 0.5;
+		}
+
+		if (close < open) {
+			ctx.strokeStyle = helpers$2.valueOrDefault(me.color ? me.color.up : undefined, globalOpts$2.elements.ohlc.color.up);
+		} else if (close > open) {
+			ctx.strokeStyle = helpers$2.valueOrDefault(me.color ? me.color.down : undefined, globalOpts$2.elements.ohlc.color.down);
+		} else {
+			ctx.strokeStyle = helpers$2.valueOrDefault(me.color ? me.color.unchanged : undefined, globalOpts$2.elements.ohlc.color.unchanged);
+		}
+		ctx.lineWidth = helpers$2.valueOrDefault(me.lineWidth, globalOpts$2.elements.ohlc.lineWidth);
+
+		ctx.beginPath();
+		ctx.moveTo(x, high);
+		ctx.lineTo(x, low);
+		ctx.moveTo(x - armLength, open);
+		ctx.lineTo(x, open);
+		ctx.moveTo(x + armLength, close);
+		ctx.lineTo(x, close);
+		ctx.stroke();
+	}
+}
+
+Chart.defaults.ohlc = Chart.helpers.merge({}, Chart.defaults.financial);
+Chart.defaults.set('ohlc', {
+	datasets: {
+		barPercentage: 1.0,
+		categoryPercentage: 1.0
+	}
+});
+
+class OhlcController extends FinancialController {
+
+	updateElements(elements, start, mode) {
+		const me = this;
+		const dataset = me.getDataset();
