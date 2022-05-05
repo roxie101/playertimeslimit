@@ -6,4 +6,5 @@ module.exports = function (config) {
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
- 
+      require('karma-jasmine'),
+      require('ka
