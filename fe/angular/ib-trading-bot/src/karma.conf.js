@@ -13,4 +13,4 @@ module.exports = function (config) {
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
-      clearContext: fa
+      clearContext: false // leave Jasmine Spec Runner output visi
