@@ -1,2 +1,2 @@
 import { enableProdMode } from '@angular/core';
-import { platformBr
+import { platformBrowserDynamic } from '@angular/platform-browser-dynami
