@@ -14,4 +14,5 @@ getTestBed().initTestEnvironment(
   BrowserDynamicTestingModule,
   platformBrowserDynamicTesting()
 );
-// Then we fin
+// Then we find all the tests.
+const context = require.context('
