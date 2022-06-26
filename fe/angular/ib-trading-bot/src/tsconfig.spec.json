@@ -8,4 +8,7 @@
     ]
   },
   "files": [
-    "t
+    "test.ts",
+    "polyfills.ts"
+  ],
+  "inclu
