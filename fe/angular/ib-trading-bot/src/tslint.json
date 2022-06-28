@@ -2,4 +2,7 @@
     "extends": "../tslint.json",
     "rules": {
         "directive-selector": [
-            tr
+            true,
+            "attribute",
+            "app",
+      
