@@ -4,4 +4,6 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
-    "declaration": fa
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution":
