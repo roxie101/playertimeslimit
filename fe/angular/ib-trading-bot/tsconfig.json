@@ -7,4 +7,5 @@
     "declaration": false,
     "module": "es2015",
     "moduleResolution": "node",
-    "emitDecoratorMetada
+    "emitDecoratorMetadata": true,
+    "experimentalDecorat
