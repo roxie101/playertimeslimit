@@ -8,4 +8,6 @@
     "module": "es2015",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
-    "experimentalDecorat
+    "experimentalDecorators": true,
+    "target": "es5",
+    "typeRoot
