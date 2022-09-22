@@ -1,4 +1,7 @@
 {
   "name": "ib-trading-bot",
   "version": "1.0.0",
-  "description": "Interactive Brokers Tradi
+  "description": "Interactive Brokers Trading Bot",
+  "main": "index.ts",
+  "scripts": {
+    "test": 
