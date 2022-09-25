@@ -4,4 +4,4 @@
   "description": "Interactive Brokers Trading Bot",
   "main": "index.ts",
   "scripts": {
-    "test": 
+    "test": "echo \"Error: no test specified\
