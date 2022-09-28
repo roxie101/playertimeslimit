@@ -9,4 +9,7 @@
     "tsc": "tsc"
   },
   "author": "Otto Coster",
-  "license":
+  "license": "ISC",
+  "dependencies": {
+    "@stoqey/ib": "^0.1.0",
+    "@types
