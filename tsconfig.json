@@ -3,4 +3,5 @@
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
     /* Basic Options */
-    // "incremental": true,                   /* Enable incremental compi
+    // "incremental": true,                   /* Enable incremental compilation */
+    "target": "es5",              
