@@ -15,4 +15,4 @@
     // "sourceMap": true,                     /* Generates corresponding '.map' file. */
     // "outFile": "./",                       /* Concatenate and emit output to single file. */
     // "outDir": "./",                        /* Redirect output structure to the directory. */
-    // "rootDir": "./",                   
+    // "rootDir": "./",                       /* Specify the root directory of input files. U
