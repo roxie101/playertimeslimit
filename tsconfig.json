@@ -19,4 +19,4 @@
     // "composite": true,                     /* Enable project compilation */
     // "tsBuildInfoFile": "./",               /* Specify file to store incremental compilation information */
     // "removeComments": true,                /* Do not emit comments to output. */
-    // "noEmit": 
+    // "noEmit": true,                        /* Do not emit
