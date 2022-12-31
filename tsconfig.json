@@ -29,4 +29,4 @@
     // "noImplicitAny": true,                 /* Raise error on expressions and declarations with an implied 'any' type. */
     // "strictNullChecks": true,              /* Enable strict null checks. */
     // "strictFunctionTypes": true,           /* Enable strict checking of function types. */
-    // "strictBindCallApply": true,           /
+    // "strictBindCallApply": true,           /* Enable strict 'bind', 'call', and 'apply' meth
