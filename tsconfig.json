@@ -37,4 +37,4 @@
     /* Additional Checks */
     // "noUnusedLocals": true,                /* Report errors on unused locals. */
     // "noUnusedParameters": true,            /* Report errors on unused parameters. */
-    /
+    // "noImplicitReturns": true,             /
