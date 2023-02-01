@@ -41,4 +41,4 @@
     // "noFallthroughCasesInSwitch": true,    /* Report errors for fallthrough cases in switch statement. */
 
     /* Module Resolution Options */
-    // "m
+    // "moduleResolution": "node",            /* Specify module resol
