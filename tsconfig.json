@@ -52,4 +52,5 @@
     // "preserveSymlinks": true,              /* Do not resolve the real path of symlinks. */
     // "allowUmdGlobalAccess": true,          /* Allow accessing UMD globals from modules. */
 
-    /* Source Map Options 
+    /* Source Map Options */
+    // "sourceRoot": "",                   
