@@ -60,4 +60,4 @@
 
     /* Experimental Options */
     // "experimentalDecorators": true,        /* Enables experimental support for ES7 decorators. */
-    // "emitDecoratorMetadata": true,         /* Enabl
+    // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metad
